@@ -1,0 +1,65 @@
+// Color (Primary)
+$rms-primary-20: #e6f8ff;
+$rms-primary-50:#99e1ff;
+$rms-primary-400:#006c99;
+$rms-primary: #00b4ff;
+$rms-primary-600:#004866;
+
+// Color (Secondary)
+$rms-secondary-20: #e6edf1;
+$rms-secondary-50: #99b8c7	;
+$rms-secondary-400: #002f46;
+$rms-secondary: #004e74;
+$rms-secondary-600: #001f2e;
+
+
+// Color (State)
+$rms-cs-info: #2985ea;
+$rms-cs-success: #26e82b;
+$rms-cs-warning: #eacd2a;
+$rms-cs-danger: #e74c4c;
+
+$rms-cs: (
+    'info': $rms-cs-info,
+    'success': $rms-cs-success,
+    'warning': $rms-cs-warning,
+    'danger': $rms-cs-danger,
+);
+
+// Color
+$rms-black: #171719;
+$rms-white: #ffffff;
+
+// Color Shade (Dark)
+$rms-cs-dark-500: #a1a1a1;
+$rms-cs-dark-400: #545357;
+$rms-cs-dark-300: #98989a;
+$rms-cs-dark-200: #bbbabc;
+
+// Color Shade (Light)
+$rms-cs-light-500: #ffffff;
+$rms-cs-light-600: #fafafa;
+$rms-cs-light-700: #f1f1f2;
+$rms-cs-light-800: #eaeaeb;
+$rms-cs-light-900: #e4e4e4;
+
+
+// Custom Color (State)
+@each $key, $value in $rms-cs {
+    .rms-text-#{$key} {
+        color: $value !important;
+    }
+
+    .rms-bg-#{$key} {
+        background-color: $value !important;
+    }
+}
+
+// NOTE: The state is also for toastr and buttons
+// Status CS > Color > Success
+$rms-cs-status-success: #13b918;
+
+$rms-cs-status-bg-success: #edfded;
+
+
+

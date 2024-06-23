@@ -1,0 +1,53 @@
+/* Adds 5.25 kB */
+@import 'ngx-toastr/toastr';
+
+$rms-toastr-type: (
+    'success': (
+        $rms-cs-status-success,
+        $rms-cs-status-bg-success,
+    ),
+    'error': (
+        $rms-cs-status-error,
+        $rms-cs-status-bg-error,
+    ),
+    'warning': (
+        $rms-cs-status-warning,
+        $rms-cs-status-bg-warning,
+    ),
+    'info': (
+        $rms-cs-status-info,
+        $rms-cs-status-bg-info,
+    ),
+);
+
+.toast-container {
+    .ngx-toastr {
+        border-radius: calc($rms-border-radius-base * 2);
+        padding: calc($rms-spacing-base * 2);
+        box-shadow: 0px 8px 24px -4px rgba(77, 77, 77, 0.16);
+        background-image: none;
+        @include css3-prefix(transition, box-shadow 0.3s ease);
+
+        &:hover {
+            box-shadow: 0px 8px 24px -4px rgba(77, 77, 77, 0.5);
+        }
+
+        @each $key, $value in $rms-toastr-type {
+            &.toast-#{$key} {
+                color: nth($value, 1);
+                @include border-property(all, 1, solid, nth($value, 1));
+                background-color: nth($value, 2);
+            }
+        }
+    }
+
+    .toast-title {
+        font-size: $rms-fs-base;
+        font-weight: $rms-fw-500;
+    }
+
+    .toast-message {
+        font-size: $rms-fs-sm;
+        font-weight: $rms-fw-300;
+    }
+}

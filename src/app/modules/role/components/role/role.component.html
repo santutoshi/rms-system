@@ -1,0 +1,111 @@
+<div class="container pt-3">
+  <div class="page-header">
+    <div class="table-header-wrapper">
+      <h2 class="page-header_title">Role Management</h2>
+    </div>
+    <div class="page-header-actions">
+      <div
+        class="tooltip-container"
+        appTooltip="You can't perform this action."
+      >
+        <button
+          class="btn btn-secondary"
+          (click)="addRole('create')"
+          permissionCheck
+          [mainGroup]="'standard'"
+          [subGroup]="'actions'"
+          [action]="'create'"
+        >
+          <i class="icon-add me-1 mt-1"></i>
+          <span class="align-self-center"> Create new role </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <form>
+        <app-filter-table
+          (filterTrigger)="filterList($event)"
+        ></app-filter-table>
+        <table class="table mt-4 mb-0">
+          <thead>
+            <tr>
+              <th scope="col" sortable="name">SN</th>
+              <th scope="col" sortable="name">Name</th>
+              <th scope="col" sortable="description">Assigned Staff</th>
+              <th scope="col" sortable="description">Permissions</th>
+              <th scope="col" sortable="actions">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (role of roleList$ | async | filter:searchTerm; track
+            role.roleId) {
+            <tr>
+              <td scope="row">{{ role.roleId }}</td>
+              <td scope="row">{{ role.roleName }}</td>
+              <td scope="row">
+                <div class="hr-people-wrapper">
+                  <div class="hr-people me-2">
+                    <div class="contact-img img-sm rounded-circle">
+                      <i class="icon-user" title=""></i>
+                    </div>
+
+                    <div class="contact-img img-sm rounded-circle">
+                      <i class="icon-user" title=""></i>
+                    </div>
+                    <span class="contact-img img-sm rounded-circle">
+                      <span class="fs-xs" title="+4 more staffs">+4</span>
+                    </span>
+                  </div>
+                  <span
+                    class="btn-view link link-secondary"
+                    type="button"
+                    (click)="getAllStaff(role.roleId, role.roleName)"
+                  >
+                    View All
+                  </span>
+                </div>
+              </td>
+              <td scope="row">
+                <div
+                  class="tooltip-container"
+                  appTooltip="You can't perform this action."
+                >
+                  <button
+                    class="btn btn-secondary"
+                    (click)="viewRolePermission(role.roleId, role.roleName)"
+                    permissionCheck
+                    [mainGroup]="'standard'"
+                    [subGroup]="'viewPrivilege'"
+                    [action]="'viewPrivilege'"
+                  >
+                    View
+                  </button>
+                </div>
+              </td>
+              <td scope="row">
+                <app-kebab-icon-action
+                  [roleId]="role.roleId"
+                ></app-kebab-icon-action>
+              </td>
+            </tr>
+            } @empty {
+            <tr>
+              <td colspan="5" class="text-center py-3">
+                <span class="mb-2 d-inline-block">
+                  You don't have any roles
+                </span>
+                <br />
+                <button class="btn btn-secondary" (click)="addRole('create')">
+                  Add Role
+                </button>
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>

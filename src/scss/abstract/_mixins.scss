@@ -1,0 +1,117 @@
+// Compatibility
+@mixin css3-prefix($property, $value) {
+    -webkit-#{$property}: #{$value};
+    -khtml-#{$property}: #{$value};
+    -moz-#{$property}: #{$value};
+    -ms-#{$property}: #{$value};
+    -o-#{$property}: #{$value};
+    #{$property}: #{$value};
+}
+
+// Avatar
+@mixin avatar-size-ratio($height: 42, $width: 42) {
+    height: #{$height}px;
+    width: #{$width}px;
+}
+
+// Avatar (Font)
+@mixin avatar-font-ratio($key: 'default') {
+    @if ($key == 'default') {
+        font-size: $rms-fs-lg;
+    } @else if($key == 'sm') {
+        font-size: $rms-fs-sm;
+    } @else if($key == 'md') {
+        font-size: $rms-fs-lg * 1.5;
+    } @else if($key == 'lg') {
+        font-size: $rms-fs-lg * 2;
+    }
+}
+
+// Border
+@mixin border-property(
+    $border-placement: all,
+    $border-width: 1,
+    $border-style: solid,
+    $border-color: $rms-cs-dark-200
+) {
+    @if ($border-placement == all) {
+        border: #{$border-width}px $border-style $border-color;
+    } @else {
+        border-#{$border-placement}: #{$border-width}px
+            $border-style
+            $border-color;
+    }
+}
+
+// Image (Background)
+@mixin bg-image-property(
+    $bg-image-path: '',
+    $bg-repeat: no-repeat,
+    $bg-position: 0 0
+) {
+    background: url($bg-image) $bg-repeat $bg-position;
+}
+
+// Line Clamp
+@mixin line-clamp($line-count: 2, $box-orient: vertical) {
+    display: -webkit-box;
+    -webkit-line-clamp: $line-count;
+    -webkit-box-orient: $box-orient;
+    overflow: hidden;
+}
+
+// Auth Layout Background Image
+@mixin auth-bg-logo-layout($img-margin: 2rem) {
+    margin-top: $img-margin;
+    min-height: calc(100vh - $img-margin);
+}
+
+// Table > Resizable
+@mixin table-thead-resizable($cursor: resize, $size: $rms-fs-xs) {
+    font-size: $size;
+    cursor: $cursor;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $rms-cs-dark-200;
+    @include css3-prefix(transition, color 0.1s ease);
+}
+
+// Table > Responsive > Height
+@mixin table-responsive_vh($value) {
+    max-height: calc(100vh - $value);
+}
+
+@mixin contact-status($color: $rms-cs-info) {
+    &::before {
+        background-color: $color;
+    }
+}
+
+@mixin icomoon($icon, $icon-color: $rms-cs-dark-200) {
+    font-family: $rms-ff-icomoon;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &::before {
+        content: $icon;
+        color: $icon-color;
+    }
+}
+
+@mixin form-control() {
+    display: block;
+    width: 100%;
+    font-size: $rms-fs-base;
+    font-weight: $rms-fw-400;
+    padding: $rms-input-padding-y $rms-input-padding-x;
+    line-height: $rms-input-line-height;
+    border: 1px solid $rms-cs-light-900;
+    border-radius: $rms-input-radius;
+}

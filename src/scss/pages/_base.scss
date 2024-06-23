@@ -1,0 +1,33 @@
+// Avatar > Opportunity > Override
+.opp-avatar {
+    @include border-property(all, 2, solid, $rms-cs-dark-200);
+
+    @include media-breakpoint-down(md) {
+        height: 60px;
+        width: 60px;
+        font-size: $rms-fs-x-lg;
+    }
+
+    &,
+    img {
+        border-radius: 10px;
+    }
+}
+
+// page > Header
+.page-header {
+    @extend %flex-y-center;
+    justify-content: space-between;
+    margin-bottom: calc($rms-spacing-base * 4);
+    flex-direction: column;
+
+    @include media-breakpoint-down(md) {
+        align-items: start;
+    }
+
+    @include media-breakpoint-up(md) {
+        flex-direction: row;
+    }
+}
+
+

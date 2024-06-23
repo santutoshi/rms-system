@@ -1,0 +1,74 @@
+<div class="container pt-3">
+  <div class="page-header">
+    <div class="table-header-wrapper">
+      <h2 class="page-header_title">Staff</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body w-75">
+      <app-filter-table (filterTrigger)="filterList($event)"></app-filter-table>
+
+      <table class="table mt-4 mb-0">
+        <thead>
+          <tr>
+            <th scope="col" sortable="name">#SN</th>
+            <th scope="col" sortable="name">Name</th>
+            <th scope="col" sortable="Permissions">Assigned Permissions</th>
+            <th scope="col" sortable="actions">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (staff of staffList$ | async| filter:searchTerm; track
+          staff.staffId) {
+          <tr>
+            <th scope="row">{{ staff.staffId }}</th>
+            <th scope="row">{{ staff.name }}</th>
+            <th scope="row">
+              <div
+                class="tooltip-container"
+                appTooltip="This actions has been disabled."
+              >
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  [disabled]="true"
+                  (click)="viewAllPermission(staff.staffId, staff.name)"
+                >
+                  View
+                </button>
+              </div>
+            </th>
+            <th scope="row">
+              <div
+                class="tooltip-container"
+                appTooltip="You can't perform this action."
+              >
+                <button
+                  type="button"
+                  class="btn btn-danger float-end"
+                  (click)="removeStaff(staff.staffId)"
+                  permissionCheck
+                  [mainGroup]="'standard'"
+                  [subGroup]="'actions'"
+                  [action]="'delete'"
+                >
+                  <i class="icon-delete"></i> Remove
+                </button>
+              </div>
+            </th>
+          </tr>
+          } @empty {
+          <tr>
+            <td colspan="5" class="text-center py-3">
+              <span class="mb-2 d-inline-block">
+                You don't have any staff
+              </span>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

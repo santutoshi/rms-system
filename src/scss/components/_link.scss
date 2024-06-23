@@ -1,0 +1,25 @@
+// links
+$rms-links: (
+    'primary': $rms-primary,
+    'secondary': $rms-secondary,
+    // 'default': $rms-cs-dark-400,
+);
+
+@each $key, $value in $rms-links {
+    .rms-link-#{$key} {
+        color: $rms-cs-dark-400;
+
+        &:hover {
+            color: $value;
+        }
+    }
+}
+
+a,
+.rms-link {
+    @include css3-prefix(transition, color 0.3s ease);
+
+    &.disabled {
+        pointer-events: none;
+    }
+}

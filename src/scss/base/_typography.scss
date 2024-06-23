@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap');
+
+// Font Family
+$rms-ff-base: 'Inter', sans-serif;
+$rms-ff-fontello: 'fontello' !important;
+$rms-ff-icomoon: 'icomoon' !important;
+
+/* Font Weight */
+$rms-fw-100: 100;
+$rms-fw-200: 200;
+$rms-fw-300: 300;
+$rms-fw-400: 400;
+$rms-fw-500: 500;
+$rms-fw-600: 600;
+$rms-fw-700: 700;
+$rms-fw-800: 800;
+$rms-fw-900: 900;
+
+// Font Size
+$rms-fs-base: 1rem; // 16px
+$rms-fs-xx-sm: $rms-fs-base * 0.5; // 8px
+$rms-fs-x-sm: $rms-fs-base * 0.625; // 10px
+$rms-fs-xs: $rms-fs-base * 0.75; // 12px
+$rms-fs-sm: $rms-fs-base * 0.875; // 14px
+$rms-fs-lg: $rms-fs-base * 1.125; // 18px
+$rms-fs-x-lg: $rms-fs-base * 1.25; // 20px
+$rms-fs-xx-lg: $rms-fs-base * 1.375; //22px
+
+// Custom Font Size
+$rms-fs-24: $rms-fs-base * 1.5;
+
+// Line Height
+$rms-lh-base: 1.25rem;
+
+// Font Size (Heading)
+$rms-fs-h1: $rms-fs-base * 2;
+$rms-fs-h2: $rms-fs-lg * 1.5;
+$rms-fs-h3: $rms-fs-lg * 1.5;
+$rms-fs-h4: $rms-fs-base * 1.5;
+
+// Button
+$rms-btn-fs: $rms-fs-xs;
+$rms-btn-lh: 0.908rem;
+
+// Heading Font Size
+h1,
+.h1 {
+    font-size: $rms-fs-h1;
+    font-weight: $rms-fw-600;
+    letter-spacing: -0.03rem;
+}
+
+h2,
+.h2 {
+    font-size: $rms-fs-h2;
+    font-weight: $rms-fw-500;
+    letter-spacing: -0.03rem;
+}
+
+h3,
+.h3 {
+    font-size: $rms-fs-h3;
+    letter-spacing: -0.03rem;
+}
+
+h4,
+.h4 {
+    font-size: $rms-fs-h4;
+    letter-spacing: -0.03rem;
+}
+
+.fs-xs {
+    font-size: $rms-fs-xs;
+}
+
+.fs-sm {
+    font-size: $rms-fs-sm;
+}

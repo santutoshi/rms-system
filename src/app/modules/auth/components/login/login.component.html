@@ -1,0 +1,50 @@
+<div class="col-md-6 offset-md-3 mt-5">
+  <div class="alert alert-info">
+    <strong>Editor</strong> - U: user P: user<br />
+    <strong>Administrator</strong> - U: admin P: admin <br />
+    <strong>Viewer</strong> - U: viewer P:viewer <br />
+    <strong>Contributor</strong> - U: contributor P: contributor
+  </div>
+  <div class="card">
+    <h4 class="card-header">Login with above user for diffrent roles</h4>
+    <div class="card-body">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group mb-3">
+          <label for="name" class="form-label">Username <sup>*</sup></label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Username"
+            class="form-control"
+            formControlName="username"
+            appFormControlValidation
+            [formLabel]="'username'"
+          />
+        </div>
+        <div class="form-group mb-3">
+          <label for="name" class="form-label">Password <sup>*</sup></label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Username"
+            class="form-control"
+            formControlName="password"
+            appFormControlValidation
+            [formLabel]="'password'"
+          />
+        </div>
+
+        <button [disabled]="isLoading$ | async" class="btn btn-primary">
+          <span
+            *ngIf="isLoading$ | async"
+            class="spinner-border spinner-border-sm me-1"
+          ></span>
+          Login
+        </button>
+        <div *ngIf="error" class="alert alert-danger mt-3 mb-0">
+          {{ error }}
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

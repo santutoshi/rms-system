@@ -1,0 +1,41 @@
+<div
+  class="d-md-flex justify-content-between align-items-center align-self-center"
+>
+  <div class="searchbox inputbox-with-icon d-flex">
+    <i class="icon-search"></i>
+    <input
+      type="search"
+      title="search"
+      #inputField
+      (keyup)="search($event)"
+      placeholder="Search Role..."
+      autocomplete="none"
+      class="form-control outline-0 search-input fs-sm"
+    />
+  </div>
+  <!-- 
+  <div class="searchbox">
+    <input
+      type="search"
+      title="search"
+      (keyup)="searchRole($event)"
+      placeholder="Eg. contributor"
+      autocomplete="none"
+      class="form-control outline-0 search-input fs-xs"
+    />
+  </div> -->
+
+  <div class="d-flex gap-4">
+    <button type="button" class="btn btn-secondary" (click)="resetSearch()">
+      <div class="d-flex align-items-center justify-content-between">
+        <i class="icon icon-undo"></i>
+      </div>
+    </button>
+    <button type="button" class="btn btn-secondary" (click)="triggerfilter()">
+      <div class="d-flex align-items-center justify-content-between">
+        <i class="icon icon-filter me-3"></i>
+        <span>Filter</span>
+      </div>
+    </button>
+  </div>
+</div>

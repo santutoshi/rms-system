@@ -1,0 +1,28 @@
+@use 'sass:math';
+
+.form-check-label {
+    font-size: 14;
+    color: "000000"
+}
+
+.form-label,
+.form-check-label {
+    [class*='icon-'] {
+        color: $rms-cs-dark-200;
+        margin-left: calc(16 / 2);
+        font-size: $rms-fs-sm;
+        cursor: pointer;
+        @include css3-prefix(transition, color 0.3s ease);
+
+        &:hover {
+            color: $rms-cs-dark-400;
+        }
+    }
+}
+
+.has-no-label {
+    label,
+    .form-label {
+        display: none;
+    }
+}

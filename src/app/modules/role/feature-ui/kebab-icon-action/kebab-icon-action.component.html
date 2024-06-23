@@ -1,0 +1,24 @@
+<div class="dropdown d-inline-block">
+  <div
+    class="icon-kebab fs-5 p-2"
+    type="button"
+    id="{{ 'dropdownMenuButton' + roleId }}"
+    data-toggle="dropdown"
+    data-bs-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+  ></div>
+  <div
+    class="dropdown-menu dropdown-menu-end"
+    aria-labelledby="{{ 'dropdownMenuButton' + roleId }}"
+  >
+    @for (action of actions; track action) {
+
+    <a class="dropdown-item" (click)="performAction(action.actions, roleId)">
+      <i [ngClass]="action.iconClass"> </i>
+      {{ action.name }}
+    </a>
+
+    }
+  </div>
+</div>

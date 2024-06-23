@@ -1,0 +1,58 @@
+
+.inputbox-with-icon {
+    border: 1px solid $rms-cs-dark-500;
+    border-radius: 5px;
+    padding-left: 4px;
+    align-items: center;
+  
+    &:focus-within {
+      border-color: $rms-primary;
+    }
+  
+    .icon {
+      margin-left: 10px;
+    }
+  
+    .form-control {
+      border: none !important;
+      outline: none !important;
+  
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+
+
+// searchbox input styles start
+.searchbox {
+    $searchBox: &;
+    border-radius: 5px;
+    display: flex;
+    gap: 0;
+  
+    &-cross {
+      position: relative;
+      padding-left: 0;
+  
+      .icon-cross {
+        position: absolute;
+        cursor: pointer;
+        right: 0;
+        margin: 0;
+        padding: 4px;
+        background-color: $rms-white;
+      }
+    }
+  
+    > input {
+      padding: 10px;
+      min-width: none;
+  
+    }
+  }
+
+.search-input {
+    text-overflow: ellipsis;
+  }
+  

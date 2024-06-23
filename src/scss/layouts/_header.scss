@@ -1,0 +1,128 @@
+// page Header
+.page-header {
+  $table-header: &;
+  @extend %flex-y-center;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  gap: calc($rms-spacing-base * 1.5);
+  margin-bottom: $rms-spacing-base * 2;
+
+  @include media-breakpoint-up(md) {
+    flex-direction: column;
+  }
+
+  @include media-breakpoint-up(lg) {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  &_title {
+    font-size: $rms-fs-h4;
+    font-weight: $rms-fw-700;
+    margin-bottom: 0;
+    color: $rms-primary-600;
+    text-transform: uppercase;
+  }
+
+  &_count {
+    font-size: $rms-fs-xs;
+    color: $rms-cs-dark-200;
+  }
+
+  &_action {
+    &.btn {
+      font-size: $rms-fs-xs;
+      font-weight: $rms-fw-600;
+    }
+  }
+
+  // Table Header With Sortable on the right
+  &-wrapper {
+    @extend %flex-y-center;
+    flex-direction: column;
+    align-items: start;
+
+    @include media-breakpoint-down(md) {
+      gap: calc($rms-spacing-base * 1.5);
+    }
+
+    @include media-breakpoint-up(md) {
+      flex-direction: column;
+    }
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    #{$table-header}_title {
+      margin-right: $rms-spacing-base;
+    }
+  }
+
+  // Table Header With button on right
+  &-actions {
+    @extend %flex-y-center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: calc($rms-spacing-base * 1);
+
+    .btn,
+    .is-component {
+      width: 100%;
+    }
+
+    .is-component {
+      .btn {
+        width: 100%;
+      }
+    }
+
+    @include media-breakpoint-up(sm) {
+      flex-direction: row;
+
+      .btn,
+      .is-component {
+        width: 49%;
+        flex: 0 0 auto;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      width: auto;
+      gap: calc($rms-spacing-base * 2);
+
+      .btn,
+      .is-component {
+        width: auto;
+      }
+    }
+  }
+}
+
+.page-header-wrapper {
+  margin-left: $rms-page-ml;
+}
+
+.navbar-brand {
+  font-size: calc($rms-fs-base * 2);
+  font-weight: $rms-fw-700;
+  color: $rms-primary-600;
+  letter-spacing: -2px;
+}
+
+.navbar {
+  border-bottom: 1px solid $rms-cs-light-900;
+}
+
+.navbar-collapse {
+  @include media-breakpoint-up(lg) {
+    justify-content: end;
+  }
+}
+
+.link {
+  text-decoration: none;
+}

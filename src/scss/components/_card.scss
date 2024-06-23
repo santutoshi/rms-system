@@ -1,0 +1,14 @@
+// Card > Layout > Overall
+.card-title {
+  &_sub {
+    color: $rms-cs-dark-300;
+    font-weight: $rms-fw-600;
+    font-size: $rms-fs-xs;
+    text-transform: uppercase;
+    margin-bottom: $rms-spacing-base * 2;
+  }
+}
+
+.rms-card-v1 {
+  border-radius: calc($rms-border-radius * 4);
+}

@@ -1,0 +1,9 @@
+.rms-content {
+  min-height: calc(100svh - 75px);
+  position: relative;
+  padding: $rms-spacing-base 0;
+}
+
+.rms-fluid {
+  background-color: $rms-cs-light-600;
+}

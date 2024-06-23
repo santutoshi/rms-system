@@ -1,0 +1,1224 @@
+{
+  "roles": [
+    {
+      "id": "1",
+      "roleId": 1,
+      "roleName": "Admin",
+      "description": "Administrator with full access",
+      "permissions": ["standard", "basic", "trial"]
+    },
+    {
+      "id": "2",
+      "roleId": 2,
+      "roleName": "Editor",
+      "description": "Editor with permissions to manage content",
+      "permissions": ["standard", "basic", "trial"]
+    },
+    {
+      "id": "3",
+      "roleId": 3,
+      "roleName": "Viewer",
+      "description": "Viewer with read-only access",
+      "permissions": ["trial"]
+    },
+    {
+      "id": "4",
+      "roleId": "4",
+      "roleName": "Contributor",
+      "description": "",
+      "permissions": ["trial"]
+    }
+  ],
+  "staff": [
+    {
+      "id": "2",
+      "staffId": 2,
+      "name": "Bob",
+      "roleId": 2
+    },
+    {
+      "id": "3",
+      "staffId": 3,
+      "name": "Charlie",
+      "roleId": 2
+    },
+    {
+      "id": "4",
+      "staffId": 4,
+      "name": "Charlie",
+      "roleId": 1,
+      "permissions": []
+    },
+    {
+      "id": "4",
+      "staffId": 4,
+      "name": "Hari Lal",
+      "roleId": 1,
+      "permissions": []
+    },
+    {
+      "id": "5",
+      "staffId": 5,
+      "name": "rojan",
+      "roleId": 1,
+      "permissions": []
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "roleId": 1,
+      "username": "admin",
+      "password": "admin",
+      "firstName": "Admin",
+      "lastName": "User",
+      "role": "Admin",
+      "token": "ad123tr",
+      "permissions": ["standard", "basic", "trial"]
+    },
+    {
+      "id": "2",
+      "roleId": 3,
+      "username": "user",
+      "password": "user",
+      "firstName": "Normal",
+      "lastName": "User",
+      "role": "Editor",
+      "token": "ed5434",
+      "permissions": ["basic", "trial"]
+    },
+    {
+      "id": "3",
+      "roleId": 3,
+      "username": "viewer",
+      "password": "viewer",
+      "firstName": "viewer",
+      "lastName": "User",
+      "role": "Viewer",
+      "token": "ed543ss4",
+      "permissions": ["trial"]
+    },
+    {
+      "id": "4",
+      "roleId": 3,
+      "username": "contributor",
+      "password": "contributor",
+      "firstName": "contributor",
+      "lastName": "User",
+      "role": "Contributor ere",
+      "token": "ed543ss4",
+      "permissions": ["trial"]
+    }
+  ],
+  "permission": [
+    {
+      "id": "standard",
+      "name": "Standard",
+      "checked": true,
+      "expand": true,
+      "childs": [
+        {
+          "id": "viewPrivilege",
+          "name": "View Privilege",
+          "checked": true,
+          "expand": false,
+          "childs": []
+        },
+        {
+          "id": "actions",
+          "name": "Actions",
+          "checked": true,
+          "expand": true,
+          "childs": [
+            {
+              "id": "create",
+              "name": "Create",
+              "expand": false,
+              "childs": [],
+              "checked": true
+            },
+            {
+              "id": "edit",
+              "name": "Edit",
+              "expand": false,
+              "childs": [],
+              "checked": true
+            },
+            {
+              "id": "delete",
+              "name": "Delete",
+              "expand": false,
+              "childs": [],
+              "checked": true
+            }
+          ]
+        },
+        {
+          "id": "report",
+          "name": "Reports",
+          "checked": true,
+          "expand": true,
+          "childs": [
+            {
+              "id": "view",
+              "name": "View",
+              "expand": false,
+              "childs": [],
+              "checked": {
+                "id": "standard",
+                "name": "Standard",
+                "checked": true,
+                "expand": true,
+                "childs": [
+                  {
+                    "id": "viewPrivilege",
+                    "name": "View Privilege",
+                    "checked": false,
+                    "expand": false,
+                    "childs": []
+                  },
+                  {
+                    "id": "actions",
+                    "name": "Actions",
+                    "checked": false,
+                    "expand": true,
+                    "childs": [
+                      {
+                        "id": "create",
+                        "name": "Create",
+                        "expand": false,
+                        "childs": [],
+                        "checked": false
+                      },
+                      {
+                        "id": "edit",
+                        "name": "Edit",
+                        "expand": false,
+                        "childs": [],
+                        "checked": false
+                      },
+                      {
+                        "id": "delete",
+                        "name": "Delete",
+                        "expand": false,
+                        "childs": [],
+                        "checked": false
+                      }
+                    ]
+                  },
+                  {
+                    "id": "report",
+                    "name": "Reports",
+                    "checked": false,
+                    "expand": true,
+                    "childs": [
+                      {
+                        "id": "view",
+                        "name": "View",
+                        "expand": false,
+                        "childs": [],
+                        "checked": {
+                          "id": "standard",
+                          "name": "Standard",
+                          "checked": false,
+                          "expand": true,
+                          "childs": [
+                            {
+                              "id": "viewPrivilege",
+                              "name": "View Privilege",
+                              "checked": true,
+                              "expand": false,
+                              "childs": []
+                            },
+                            {
+                              "id": "actions",
+                              "name": "Actions",
+                              "checked": true,
+                              "expand": true,
+                              "childs": [
+                                {
+                                  "id": "create",
+                                  "name": "Create",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": true
+                                },
+                                {
+                                  "id": "edit",
+                                  "name": "Edit",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": true
+                                },
+                                {
+                                  "id": "delete",
+                                  "name": "Delete",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": true
+                                }
+                              ]
+                            },
+                            {
+                              "id": "report",
+                              "name": "Reports",
+                              "checked": true,
+                              "expand": true,
+                              "childs": [
+                                {
+                                  "id": "view",
+                                  "name": "View",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": {
+                                    "id": "standard",
+                                    "name": "Standard",
+                                    "checked": true,
+                                    "expand": true,
+                                    "childs": [
+                                      {
+                                        "id": "viewPrivilege",
+                                        "name": "View Privilege",
+                                        "checked": false,
+                                        "expand": false,
+                                        "childs": []
+                                      },
+                                      {
+                                        "id": "actions",
+                                        "name": "Actions",
+                                        "checked": false,
+                                        "expand": true,
+                                        "childs": [
+                                          {
+                                            "id": "create",
+                                            "name": "Create",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "edit",
+                                            "name": "Edit",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "delete",
+                                            "name": "Delete",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "id": "report",
+                                        "name": "Reports",
+                                        "checked": false,
+                                        "expand": true,
+                                        "childs": [
+                                          {
+                                            "id": "view",
+                                            "name": "View",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "download",
+                                            "name": "Download",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "id": "download",
+                                  "name": "Download",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": {
+                                    "id": "standard",
+                                    "name": "Standard",
+                                    "checked": true,
+                                    "expand": true,
+                                    "childs": [
+                                      {
+                                        "id": "viewPrivilege",
+                                        "name": "View Privilege",
+                                        "checked": false,
+                                        "expand": false,
+                                        "childs": []
+                                      },
+                                      {
+                                        "id": "actions",
+                                        "name": "Actions",
+                                        "checked": false,
+                                        "expand": true,
+                                        "childs": [
+                                          {
+                                            "id": "create",
+                                            "name": "Create",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "edit",
+                                            "name": "Edit",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "delete",
+                                            "name": "Delete",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "id": "report",
+                                        "name": "Reports",
+                                        "checked": false,
+                                        "expand": true,
+                                        "childs": [
+                                          {
+                                            "id": "view",
+                                            "name": "View",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "download",
+                                            "name": "Download",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "download",
+                        "name": "Download",
+                        "expand": false,
+                        "childs": [],
+                        "checked": {
+                          "id": "standard",
+                          "name": "Standard",
+                          "checked": false,
+                          "expand": true,
+                          "childs": [
+                            {
+                              "id": "viewPrivilege",
+                              "name": "View Privilege",
+                              "checked": true,
+                              "expand": false,
+                              "childs": []
+                            },
+                            {
+                              "id": "actions",
+                              "name": "Actions",
+                              "checked": true,
+                              "expand": true,
+                              "childs": [
+                                {
+                                  "id": "create",
+                                  "name": "Create",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": true
+                                },
+                                {
+                                  "id": "edit",
+                                  "name": "Edit",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": true
+                                },
+                                {
+                                  "id": "delete",
+                                  "name": "Delete",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": true
+                                }
+                              ]
+                            },
+                            {
+                              "id": "report",
+                              "name": "Reports",
+                              "checked": true,
+                              "expand": true,
+                              "childs": [
+                                {
+                                  "id": "view",
+                                  "name": "View",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": {
+                                    "id": "standard",
+                                    "name": "Standard",
+                                    "checked": true,
+                                    "expand": true,
+                                    "childs": [
+                                      {
+                                        "id": "viewPrivilege",
+                                        "name": "View Privilege",
+                                        "checked": false,
+                                        "expand": false,
+                                        "childs": []
+                                      },
+                                      {
+                                        "id": "actions",
+                                        "name": "Actions",
+                                        "checked": false,
+                                        "expand": true,
+                                        "childs": [
+                                          {
+                                            "id": "create",
+                                            "name": "Create",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "edit",
+                                            "name": "Edit",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "delete",
+                                            "name": "Delete",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "id": "report",
+                                        "name": "Reports",
+                                        "checked": false,
+                                        "expand": true,
+                                        "childs": [
+                                          {
+                                            "id": "view",
+                                            "name": "View",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "download",
+                                            "name": "Download",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "id": "download",
+                                  "name": "Download",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": {
+                                    "id": "standard",
+                                    "name": "Standard",
+                                    "checked": true,
+                                    "expand": true,
+                                    "childs": [
+                                      {
+                                        "id": "viewPrivilege",
+                                        "name": "View Privilege",
+                                        "checked": false,
+                                        "expand": false,
+                                        "childs": []
+                                      },
+                                      {
+                                        "id": "actions",
+                                        "name": "Actions",
+                                        "checked": false,
+                                        "expand": true,
+                                        "childs": [
+                                          {
+                                            "id": "create",
+                                            "name": "Create",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "edit",
+                                            "name": "Edit",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "delete",
+                                            "name": "Delete",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "id": "report",
+                                        "name": "Reports",
+                                        "checked": false,
+                                        "expand": true,
+                                        "childs": [
+                                          {
+                                            "id": "view",
+                                            "name": "View",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "download",
+                                            "name": "Download",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "download",
+              "name": "Download",
+              "expand": false,
+              "childs": [],
+              "checked": {
+                "id": "standard",
+                "name": "Standard",
+                "checked": true,
+                "expand": true,
+                "childs": [
+                  {
+                    "id": "viewPrivilege",
+                    "name": "View Privilege",
+                    "checked": false,
+                    "expand": false,
+                    "childs": []
+                  },
+                  {
+                    "id": "actions",
+                    "name": "Actions",
+                    "checked": false,
+                    "expand": true,
+                    "childs": [
+                      {
+                        "id": "create",
+                        "name": "Create",
+                        "expand": false,
+                        "childs": [],
+                        "checked": false
+                      },
+                      {
+                        "id": "edit",
+                        "name": "Edit",
+                        "expand": false,
+                        "childs": [],
+                        "checked": false
+                      },
+                      {
+                        "id": "delete",
+                        "name": "Delete",
+                        "expand": false,
+                        "childs": [],
+                        "checked": false
+                      }
+                    ]
+                  },
+                  {
+                    "id": "report",
+                    "name": "Reports",
+                    "checked": false,
+                    "expand": true,
+                    "childs": [
+                      {
+                        "id": "view",
+                        "name": "View",
+                        "expand": false,
+                        "childs": [],
+                        "checked": {
+                          "id": "standard",
+                          "name": "Standard",
+                          "checked": false,
+                          "expand": true,
+                          "childs": [
+                            {
+                              "id": "viewPrivilege",
+                              "name": "View Privilege",
+                              "checked": true,
+                              "expand": false,
+                              "childs": []
+                            },
+                            {
+                              "id": "actions",
+                              "name": "Actions",
+                              "checked": true,
+                              "expand": true,
+                              "childs": [
+                                {
+                                  "id": "create",
+                                  "name": "Create",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": true
+                                },
+                                {
+                                  "id": "edit",
+                                  "name": "Edit",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": true
+                                },
+                                {
+                                  "id": "delete",
+                                  "name": "Delete",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": true
+                                }
+                              ]
+                            },
+                            {
+                              "id": "report",
+                              "name": "Reports",
+                              "checked": true,
+                              "expand": true,
+                              "childs": [
+                                {
+                                  "id": "view",
+                                  "name": "View",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": {
+                                    "id": "standard",
+                                    "name": "Standard",
+                                    "checked": true,
+                                    "expand": true,
+                                    "childs": [
+                                      {
+                                        "id": "viewPrivilege",
+                                        "name": "View Privilege",
+                                        "checked": false,
+                                        "expand": false,
+                                        "childs": []
+                                      },
+                                      {
+                                        "id": "actions",
+                                        "name": "Actions",
+                                        "checked": false,
+                                        "expand": true,
+                                        "childs": [
+                                          {
+                                            "id": "create",
+                                            "name": "Create",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "edit",
+                                            "name": "Edit",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "delete",
+                                            "name": "Delete",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "id": "report",
+                                        "name": "Reports",
+                                        "checked": false,
+                                        "expand": true,
+                                        "childs": [
+                                          {
+                                            "id": "view",
+                                            "name": "View",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "download",
+                                            "name": "Download",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "id": "download",
+                                  "name": "Download",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": {
+                                    "id": "standard",
+                                    "name": "Standard",
+                                    "checked": true,
+                                    "expand": true,
+                                    "childs": [
+                                      {
+                                        "id": "viewPrivilege",
+                                        "name": "View Privilege",
+                                        "checked": false,
+                                        "expand": false,
+                                        "childs": []
+                                      },
+                                      {
+                                        "id": "actions",
+                                        "name": "Actions",
+                                        "checked": false,
+                                        "expand": true,
+                                        "childs": [
+                                          {
+                                            "id": "create",
+                                            "name": "Create",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "edit",
+                                            "name": "Edit",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "delete",
+                                            "name": "Delete",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "id": "report",
+                                        "name": "Reports",
+                                        "checked": false,
+                                        "expand": true,
+                                        "childs": [
+                                          {
+                                            "id": "view",
+                                            "name": "View",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "download",
+                                            "name": "Download",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "download",
+                        "name": "Download",
+                        "expand": false,
+                        "childs": [],
+                        "checked": {
+                          "id": "standard",
+                          "name": "Standard",
+                          "checked": false,
+                          "expand": true,
+                          "childs": [
+                            {
+                              "id": "viewPrivilege",
+                              "name": "View Privilege",
+                              "checked": true,
+                              "expand": false,
+                              "childs": []
+                            },
+                            {
+                              "id": "actions",
+                              "name": "Actions",
+                              "checked": true,
+                              "expand": true,
+                              "childs": [
+                                {
+                                  "id": "create",
+                                  "name": "Create",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": true
+                                },
+                                {
+                                  "id": "edit",
+                                  "name": "Edit",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": true
+                                },
+                                {
+                                  "id": "delete",
+                                  "name": "Delete",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": true
+                                }
+                              ]
+                            },
+                            {
+                              "id": "report",
+                              "name": "Reports",
+                              "checked": true,
+                              "expand": true,
+                              "childs": [
+                                {
+                                  "id": "view",
+                                  "name": "View",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": {
+                                    "id": "standard",
+                                    "name": "Standard",
+                                    "checked": true,
+                                    "expand": true,
+                                    "childs": [
+                                      {
+                                        "id": "viewPrivilege",
+                                        "name": "View Privilege",
+                                        "checked": false,
+                                        "expand": false,
+                                        "childs": []
+                                      },
+                                      {
+                                        "id": "actions",
+                                        "name": "Actions",
+                                        "checked": false,
+                                        "expand": true,
+                                        "childs": [
+                                          {
+                                            "id": "create",
+                                            "name": "Create",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "edit",
+                                            "name": "Edit",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "delete",
+                                            "name": "Delete",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "id": "report",
+                                        "name": "Reports",
+                                        "checked": false,
+                                        "expand": true,
+                                        "childs": [
+                                          {
+                                            "id": "view",
+                                            "name": "View",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "download",
+                                            "name": "Download",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "id": "download",
+                                  "name": "Download",
+                                  "expand": false,
+                                  "childs": [],
+                                  "checked": {
+                                    "id": "standard",
+                                    "name": "Standard",
+                                    "checked": true,
+                                    "expand": true,
+                                    "childs": [
+                                      {
+                                        "id": "viewPrivilege",
+                                        "name": "View Privilege",
+                                        "checked": false,
+                                        "expand": false,
+                                        "childs": []
+                                      },
+                                      {
+                                        "id": "actions",
+                                        "name": "Actions",
+                                        "checked": false,
+                                        "expand": true,
+                                        "childs": [
+                                          {
+                                            "id": "create",
+                                            "name": "Create",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "edit",
+                                            "name": "Edit",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "delete",
+                                            "name": "Delete",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "id": "report",
+                                        "name": "Reports",
+                                        "checked": false,
+                                        "expand": true,
+                                        "childs": [
+                                          {
+                                            "id": "view",
+                                            "name": "View",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          },
+                                          {
+                                            "id": "download",
+                                            "name": "Download",
+                                            "expand": false,
+                                            "childs": [],
+                                            "checked": false
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "basic",
+      "name": "Basic",
+      "checked": true,
+      "expand": true,
+      "childs": [
+        {
+          "id": "viewPrivilege",
+          "name": "View Privilege",
+          "checked": true,
+          "expand": false,
+          "childs": []
+        },
+        {
+          "id": "actions",
+          "name": "Actions",
+          "checked": true,
+          "expand": true,
+          "childs": [
+            {
+              "id": "create",
+              "name": "Create",
+              "expand": false,
+              "childs": [],
+              "checked": true
+            },
+            {
+              "id": "edit",
+              "name": "Edit",
+              "expand": false,
+              "childs": [],
+              "checked": true
+            }
+          ]
+        },
+        {
+          "id": "report",
+          "name": "Reports",
+          "checked": true,
+          "expand": true,
+          "childs": [
+            {
+              "id": "view",
+              "name": "View",
+              "expand": false,
+              "childs": [],
+              "checked": {
+                "id": "basic",
+                "name": "Basic",
+                "checked": true,
+                "expand": true,
+                "childs": [
+                  {
+                    "id": "viewPrivilege",
+                    "name": "View Privilege",
+                    "checked": false,
+                    "expand": false,
+                    "childs": []
+                  },
+                  {
+                    "id": "actions",
+                    "name": "Actions",
+                    "checked": false,
+                    "expand": true,
+                    "childs": [
+                      {
+                        "id": "create",
+                        "name": "Create",
+                        "expand": false,
+                        "childs": [],
+                        "checked": false
+                      },
+                      {
+                        "id": "edit",
+                        "name": "Edit",
+                        "expand": false,
+                        "childs": [],
+                        "checked": false
+                      }
+                    ]
+                  },
+                  {
+                    "id": "report",
+                    "name": "Reports",
+                    "checked": false,
+                    "expand": true,
+                    "childs": [
+                      {
+                        "id": "view",
+                        "name": "View",
+                        "expand": false,
+                        "childs": [],
+                        "checked": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trial",
+      "name": "Trial",
+      "checked": false,
+      "expand": true,
+      "childs": [
+        {
+          "id": "viewPrivilege",
+          "name": "View Privilege",
+          "checked": true,
+          "expand": false,
+          "childs": []
+        },
+        {
+          "id": "actions",
+          "name": "Actions",
+          "checked": false,
+          "expand": true,
+          "childs": [
+            {
+              "id": "create",
+              "name": "Create",
+              "expand": false,
+              "childs": [],
+              "checked": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+<div class="container pt-3">
+  <div class="page-header">
+    <div class="table-header-wrapper d-inline-flex align-items-center gap-1">
+      <a
+        (click)="goToBack()"
+        class="text-decoration-none text-primary"
+        type="button"
+      >
+        <i class="icon-arrow-left mr-2" type="button"></i>
+      </a>
+      <h2 class="page-header_title">Permission</h2>
+    </div>
+    <div class="page-header-actions">
+      <button
+        *ngIf="isEditable"
+        class="btn btn-primary"
+        (click)="savePermission()"
+        permissionCheck
+        [mainGroup]="'standard'"
+        [subGroup]="'actions'"
+        [action]="'edit'"
+      >
+        Save
+      </button>
+      <div
+        class="tooltip-container"
+        appTooltip="You can't perform this action."
+      >
+        <button
+          class="btn btn-outline-transparent"
+          (click)="isEditable = true"
+          permissionCheck
+          [mainGroup]="'standard'"
+          [subGroup]="'actions'"
+          [action]="'edit'"
+        >
+          <i class="icon-edit me-2 mt-1"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <form [formGroup]="treeForm">
+        <div class="row mb-5">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="name" class="form-label">Role <sup>*</sup></label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Role Name"
+                class="form-control outline-0 search-input fs-xs"
+                formControlName="roleName"
+                appFormControlValidation
+                [formLabel]="'roleName'"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div formArrayName="groups">
+            <ul>
+              <li
+                *ngFor="let module of groups.controls; let moduleIndex = index"
+                [formGroupName]="moduleIndex"
+              >
+                <span
+                  class="cursor-pointer tree-caret"
+                  [ngClass]="
+                    module.get('expand')?.value
+                      ? 'icon-caret-down'
+                      : 'icon-caret-right'
+                  "
+                  (click)="
+                    module.get('expand')?.setValue(!module.get('expand')?.value)
+                  "
+                ></span>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    [checked]="module.get('checked')?.value"
+                    [disabled]="!isEditable"
+                    [class.disabled-checkbox]="!isEditable"
+                    (change)="checkModule(moduleIndex)"
+                    formControlName="checked"
+                    id="item{{ module.get('id')?.value }}"
+                  />
+                  <label
+                    class="form-check-label"
+                    for="item{{ module.get('id')?.value }}"
+                    >{{ module.get("name")?.value }}</label
+                  >
+                </div>
+
+                <div formArrayName="childs">
+                  <li
+                    *ngFor="
+                      let subModule of getItems(moduleIndex).controls;
+                      let subMIndex = index
+                    "
+                    [formGroupName]="subMIndex"
+                  >
+                    <span
+                      class="cursor-pointer tree-caret"
+                      [ngClass]="
+                        subModule.get('expand')?.value
+                          ? 'icon-caret-down'
+                          : 'icon-caret-right'
+                      "
+                      (click)="
+                        subModule
+                          .get('expand')
+                          ?.setValue(!subModule.get('expand')?.value)
+                      "
+                    ></span>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        [checked]="subModule.get('checked')?.value"
+                        (change)="checkParent(moduleIndex, subMIndex)"
+                        [disabled]="!isEditable"
+                        [class.disabled-checkbox]="!isEditable"
+                        formControlName="checked"
+                        id="item{{ subModule.get('id')?.value }}"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="item{{ subModule.get('id')?.value }}"
+                        >{{ subModule.get("name")?.value }}</label
+                      >
+                    </div>
+                    <div *ngIf="subModule.get('expand')?.value">
+                      <div formArrayName="childs">
+                        <ul>
+                          <li
+                            *ngFor="
+                              let child of getChilds(moduleIndex, subMIndex)
+                                .controls;
+                              let childIndex = index
+                            "
+                            [formGroupName]="childIndex"
+                          >
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                [checked]="child.get('checked')?.value"
+                                (change)="
+                                  checkChild(moduleIndex, subMIndex, childIndex)
+                                "
+                                formControlName="checked"
+                                [disabled]="!isEditable"
+                                [class.disabled-checkbox]="!isEditable"
+                                id="child{{ child.get('id')?.value }}"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="child{{ child.get('id')?.value }}"
+                                >{{ child.get("name")?.value }}</label
+                              >
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,106 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/_variables-dark';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/forms';
+// Font
+$font-family-base: $rms-ff-base;
+
+// Color / Button merge with existing $theme-color map
+$theme-colors: map-merge(
+    $theme-colors,
+    (
+        'primary': $rms-primary,
+        'secondary': $rms-secondary,
+    )
+);
+
+// Color / Variation rgb
+$theme-colors-rgb: map-merge(
+    $theme-colors-rgb,
+    (
+        'primary': to-rgb($rms-primary),
+        'secondary': to-rgb($rms-secondary),
+    )
+);
+
+$primary: $rms-primary;
+$secondary: $rms-secondary;
+
+// Button
+$btn-padding-x: $rms-btn-padding-base * 2;
+$btn-padding-y: $rms-btn-padding-base;
+$btn-font-size: $rms-btn-fs;
+$btn-line-height: $rms-btn-lh;
+$btn-border-radius: $rms-btn-radius;
+
+// // Navbar
+$navbar-light-color: $rms-primary-600;
+$navbar-light-active-color: $rms-primary;
+$navbar-light-hover-color: $rms-primary-400;
+
+
+// Form
+$rms-input-padding-y: 0.75rem;
+$rms-input-padding-x: 1rem;
+// // Form > Base > Input
+$rms-input-line-height: 1.375rem;
+// // Form > Base > Label
+$rms-label-font-size: $rms-fs-sm;
+$rms-label-color: $rms-cs-dark-400;
+// Form > Base > Border
+
+// Form > Input
+$input-padding-y: $rms-input-padding-y;
+$input-padding-x: $rms-input-padding-x;
+$input-line-height: $rms-input-line-height;
+$input-focus-border-color: $rms-secondary;
+$input-focus-box-shadow: none;
+$input-box-shadow: none;
+
+// Form > Label
+$form-label-font-size: $rms-label-font-size;
+$form-label-color: $rms-label-color;
+
+// Form > Checkbox
+$form-check-label-cursor: pointer;
+$form-check-label-color: $rms-cs-dark-500;
+$form-check-input-border: 1px solid $rms-secondary-50;
+$form-check-input-focus-box-shadow: none;
+$form-check-border-radius: 2px;
+
+$form-check-input-focus-border: $rms-secondary;
+
+// Form > Checkbox > Checked
+$form-check-input-checked-bg-color: $rms-secondary;
+$form-check-input-checked-border-color: $rms-secondary;
+
+// Form > Select
+$form-select-padding-y: $rms-input-padding-y;
+$form-select-padding-x: $rms-input-padding-x;
+$form-select-line-height: $rms-input-line-height;
+$form-select-border-color: $rms-secondary-50;
+
+$form-select-focus-border-color: $rms-secondary;
+$form-select-focus-box-shadow: none;
+$form-select-border-radius: $rms-input-radius;
+
+// Popup Spacing
+$rms-pop-header-padding-y: calc($rms-spacing-base * 2);
+$rms-pop-header-padding-x: calc($rms-spacing-base * 3);
+
+// Modal
+$modal-inner-padding: $rms-spacing-base * 3;
+
+$modal-content-border-radius: 0;
+$modal-content-border-width: 0;
+
+$modal-header-padding-x: $rms-pop-header-padding-x;
+$modal-header-padding: $modal-header-padding-y $modal-header-padding-x;
+
+// Card
+$card-spacer-y: $rms-spacing-base * 3;
+$card-spacer-x: $rms-spacing-base * 3;
+$card-border-color: $rms-cs-light-800;
+$card-border-radius: $rms-card-radius;

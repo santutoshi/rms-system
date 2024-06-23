@@ -1,0 +1,37 @@
+/* Remove default bullets */
+ul {
+    list-style-type: none;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  ul li {
+    clear: both;
+    padding-left: 18px;
+    position: relative;
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  
+  .caret {
+    width: 10px;
+  }
+  
+  // .get-list-child-changed {
+  //   margin-top: 10px;
+  //   margin-bottom: 10px;
+  //   margin-left: 40px;
+  // }
+  
+  // .show-list-child-changed {
+  //   margin-top: 10px;
+  //   margin-bottom: 20px;
+  //   margin-left: 40px;
+  // }
+  

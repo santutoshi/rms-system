@@ -1,0 +1,32 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ header }}</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="onCancel()"
+  ></button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="roleForm" autocomplete="off" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        id="name"
+        placeholder="Name"
+        class="form-control"
+        formControlName="roleName"
+        [validationMsgId]="'roleName'"
+        appFormControlValidation
+        [formLabel]="'roleName'"
+      />
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="submit" class="btn btn-secondary" (click)="submitForm()">
+    Yes
+  </button>
+  <a class="btn btn-danger" (click)="onCancel()"> No </a>
+</div>

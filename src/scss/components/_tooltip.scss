@@ -1,0 +1,78 @@
+$rms-tooltip-border-width: 5px;
+
+.ng-tooltip {
+    position: absolute;
+    max-width: 240px;
+    font-size: $rms-fs-sm;
+    text-align: center;
+    color: $rms-cs-light-900;
+    padding: $rms-spacing-base calc($rms-spacing-base * 1.25);
+    line-height: 20px;
+    background: $rms-secondary-600;
+    border-radius: $rms-border-radius-base;
+    word-wrap: break-word;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+
+    &:after {
+        content: '';
+        position: absolute;
+        border-style: solid;
+    }
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &-top,
+    &-right,
+    &-bottom,
+    &-left {
+        &:after {
+            border-width: $rms-tooltip-border-width;
+        }
+    }
+
+    &-top {
+        &:after {
+            top: 100%;
+            left: 50%;
+            margin-left: -$rms-tooltip-border-width;
+            border-color: $rms-secondary-600 transparent transparent transparent;
+        }
+    }
+
+  
+}
+
+
+
+
+/* Style for the disabled button */
+.disabled-button {
+    cursor: not-allowed;
+  }
+  
+  /* Tooltip container should position relatively to handle the tooltip positioning */
+  .tooltip-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Tooltip styling */
+  .tooltip-container[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%; /* Position the tooltip above the element */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 1000;
+    pointer-events: none; /* Prevent the tooltip from capturing mouse events */
+  }

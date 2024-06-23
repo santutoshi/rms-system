@@ -1,0 +1,122 @@
+$rms-btn: (
+  "primary": $rms-primary,
+  "secondary": $rms-secondary,
+  "danger": $rms-cs-danger,
+  "transparent": "transparent",
+);
+
+.btn {
+  @each $key, $value in $rms-btn {
+    &.btn-#{$key} {
+      background-color: $value;
+      border-color: $value;
+      color: $rms-white;
+
+      @if ($key == "primary") {
+        &:hover {
+          background-color: $rms-primary-400;
+          border-color: $rms-primary-400;
+        }
+
+        &:active,
+        &:focus {
+          border-color: $rms-primary-600;
+          background-color: $rms-primary-600;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $rms-white;
+        }
+      }
+
+      @if ($key == "secondary") {
+        &:hover {
+          background-color: $rms-secondary-400;
+          border-color: $rms-secondary-400;
+        }
+
+        &:active,
+        &:focus {
+          background-color: $rms-secondary-600;
+          border-color: $rms-secondary-600;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $rms-white;
+        }
+      }
+   
+      
+      &:disabled{
+        cursor:not-allowed;
+        pointer-events: none;
+      }
+    }
+
+    // Button Outline Styles
+    &.btn-outline-#{$key} {
+      border-color: $value;
+      color: $value;
+
+      @if ($key == "primary") {
+        &:hover {
+          border-color: $rms-primary-400;
+          color: $rms-primary-400;
+          background-color: $rms-primary-50;
+        }
+
+        &:active,
+        &:focus,
+        &.active {
+          border-color: $rms-primary-600;
+          color: $rms-primary-600;
+          background-color: $rms-primary-50;
+        }
+      }
+
+      @if ($key == "transparent") {
+        font-size: $rms-fs-lg;
+        &:hover {
+          border-color: transparent;
+          color: inherit;
+          background-color: transparent;
+        }
+        @if ($key == "secondary") {
+          &:hover {
+            border-color: $rms-secondary-400;
+            color: $rms-secondary-400;
+            background-color: $rms-secondary-50;
+          }
+
+          &:active,
+          &:focus,
+          &.active {
+            border-color: $rms-secondary-600;
+            color: $rms-secondary-600;
+            background-color: $rms-secondary-50;
+          }
+        }
+
+        // Button > Custom > Secondary
+        &.has-outline-secondary {
+          &:hover {
+            background-color: $rms-secondary-20;
+            color: $rms-secondary-400;
+            border-color: $rms-secondary-400;
+          }
+
+          &:active,
+          &:focus,
+          &.active {
+            color: $rms-secondary-600;
+            border-color: $rms-secondary-600;
+          }
+        }
+      }
+    }
+  }
+}
