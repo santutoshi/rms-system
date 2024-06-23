@@ -11,12 +11,22 @@
       <h2 class="page-header_title">{{ roleName }} Staff List</h2>
     </div>
     <div class="page-header-actions">
-      <button class="btn btn-primary">
-        <i class="icon-add me-2 mt-1"></i>
-        <span class="align-self-center" (click)="addStaff()">
-          Create Staff</span
+      <div
+        class="tooltip-container"
+        appTooltip="You can't perform this action."
+      >
+        <button
+          class="btn btn-primary"
+          (click)="addStaff()"
+          permissionCheck
+          [mainGroup]="'standard'"
+          [subGroup]="'actions'"
+          [action]="'create'"
         >
-      </button>
+          <i class="icon-add me-2 mt-1"></i>
+          <span class="align-self-center"> Create Staff</span>
+        </button>
+      </div>
     </div>
   </div>
 
