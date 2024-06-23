@@ -5,7 +5,7 @@
 npm i
 
 ## Start development server
-npm run json:server <br/>
+npm run json:server  : runs server at :http://localhost:4000/ <br/>
 ng serve
 
 
