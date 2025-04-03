@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiURL: 'http://localhost:4000/',
+  // apiURL: 'http://localhost:4000/',
+  apiURL: 'https://rms-server-c2dz.onrender.com/',
 };
 
 /*
