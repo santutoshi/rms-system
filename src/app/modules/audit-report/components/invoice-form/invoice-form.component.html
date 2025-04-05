@@ -1,0 +1,157 @@
+<form [formGroup]="invoiceForm" (ngSubmit)="submitInvoice()">
+  <h2>Invoice Form</h2>
+
+  <div class="row">
+    <div class="col-md-6 text-start">
+      <img
+        src="assets/logo.png"
+        alt="Company Logo"
+        class="img-fluid mb-3"
+        style="max-height: 80px"
+      />
+      <p><strong>Company Name</strong></p>
+      <p>PAN: ABCDE1234F</p>
+      <p>123 Business Street,<br />City, Country</p>
+      <p>📞 +91-9876543210</p>
+    </div>
+    <!-- Left: Invoice Form -->
+    <div class="col-md-6">
+      <div class="form-group mb-3">
+        <label for="name" class="form-label">Username <sup>*</sup></label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Username"
+          class="form-control"
+          [formLabel]="'username'"
+          formControlName="customerName"
+          appFormControlValidation
+          required
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="email" class="form-label">CustomerEmail <sup>*</sup></label>
+        <input
+          type="text"
+          id="name"
+          placeholder="email"
+          class="form-control"
+          formControlName="customerEmail"
+          appFormControlValidation
+          [formLabel]="'customerEmail'"
+        />
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="invoiceDate" class="form-label"
+          >Invoice Date: <sup>*</sup></label
+        >
+        <input
+          type="date"
+          id="name"
+          placeholder="invoiceDate"
+          class="form-control"
+          formControlName="invoiceDate"
+          appFormControlValidation
+          [formLabel]="'invoiceDate'"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="card-body">
+        <h3>Items</h3>
+        <table class="table mt-4 mb-3">
+          <tr>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Actions</th>
+          </tr>
+          <tr
+            *ngFor="let item of items.controls; let i = index"
+            [formGroup]="$any(item)"
+          >
+            <td>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="description"
+                  required
+                />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  formControlName="quantity"
+                  min="1"
+                  required
+                />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  formControlName="price"
+                  min="0"
+                  required
+                />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="total"
+                />
+              </div>
+            </td>
+            <td>
+              <div
+                class="tooltip-container"
+                appTooltip="You can't perform this action."
+              >
+                <button
+                  type="button"
+                  class="btn btn-danger float-end"
+                  (click)="removeItem(i)"
+                  permissionCheck
+                  [mainGroup]="'standard'"
+                  [subGroup]="'actions'"
+                  [action]="'delete'"
+                >
+                  <i class="icon-delete"></i> Remove
+                </button>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+        <button type="button" class="btn btn-primary" (click)="addItem()">
+          Add Item
+        </button>
+
+        <h3>
+          Total Amount: {{ invoiceForm.get("totalAmount")?.value | currency }}
+        </h3>
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="invoiceForm.invalid"
+        >
+          Submit Invoice
+        </button>
+
+        <p class="mt-3">Values : {{ invoiceForm.getRawValue() | json }}</p>
+      </div>
+    </div>
+  </div>
+</form>
