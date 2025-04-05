@@ -38,6 +38,7 @@ export class AuthStates {
             ctx.dispatch(new LoginSuccessAction(user[0]));
             ctx.patchState({ isLoading: false });
           } else {
+            ctx.patchState({ isLoading: false });
             this._toastrService.error("Username and password dosen't match.!");
           }
         }
